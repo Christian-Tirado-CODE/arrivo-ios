@@ -11,7 +11,7 @@ import SwiftUI
 struct arrivoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }
