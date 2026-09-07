@@ -11,9 +11,9 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		E5F43443303A49E4004C2B14 /* arrivo */ = {
+		E5F43443303A49E4004C2B14 /* arrivo-ios */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = arrivo;
+			path = "arrivo-ios";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -32,7 +32,7 @@
 		E5F43438303A49E4004C2B14 = {
 			isa = PBXGroup;
 			children = (
-				E5F43443303A49E4004C2B14 /* arrivo */,
+				E5F43443303A49E4004C2B14 /* arrivo-ios */,
 				E5F43442303A49E4004C2B14 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,7 +61,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				E5F43443303A49E4004C2B14 /* arrivo */,
+				E5F43443303A49E4004C2B14 /* arrivo-ios */,
 			);
 			name = arrivo;
 			packageProductDependencies = (
@@ -85,7 +85,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E5F4343C303A49E4004C2B14 /* Build configuration list for PBXProject "arrivo" */;
+			buildConfigurationList = E5F4343C303A49E4004C2B14 /* Build configuration list for PBXProject "arrivo-ios" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -309,7 +309,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E5F4343C303A49E4004C2B14 /* Build configuration list for PBXProject "arrivo" */ = {
+		E5F4343C303A49E4004C2B14 /* Build configuration list for PBXProject "arrivo-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E5F4344A303A49E6004C2B14 /* Debug */,
