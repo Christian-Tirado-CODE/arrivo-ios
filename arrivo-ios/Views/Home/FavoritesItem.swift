@@ -56,9 +56,11 @@ struct FavoritesItem: View {
                   
                     
                 }.frame(maxWidth: .infinity)
-                
-                Text("+ 2 more routes >").foregroundStyle(Color(red: 100 / 255, green: 116 / 250, blue: 139 / 255)).frame(maxWidth: .infinity, alignment: .leading)
-                
+                NavigationLink(value: favoriteItem) {
+                    Text("+ 2 more routes >").foregroundStyle(Color(red: 100 / 255, green: 116 / 250, blue: 139 / 255)).frame(maxWidth: .infinity, alignment: .leading)
+                    
+                }
+               
                
                 
             }.frame(maxWidth: .infinity).padding(20).background(Color.white).cornerRadius(6).overlay(

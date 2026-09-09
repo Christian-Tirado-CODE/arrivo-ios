@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct DetailsView: View {
+    let transitStop: TransitStop
+    @Environment(\.dismiss) private var dismiss
     var body: some View {
         VStack {
 
@@ -17,11 +19,16 @@ struct DetailsView: View {
                         Circle().fill(
                             Color(red: 248 / 255, green: 252 / 250, blue: 252 / 255)
                         ).frame(width: 50, height: 50)
-
-                        Image("back_arrow_icon").resizable().scaledToFit().frame(
-                            width: 24,
-                            height: 24
-                        )
+                        
+                        Button(action: {
+                           dismiss()
+                        }){
+                            Image("back_arrow_icon").resizable().scaledToFit().frame(
+                                width: 24,
+                                height: 24
+                            )
+                        }
+                     
                     }
                     VStack(alignment: .leading) {
                         Text("Union Station").font(.system(size: 20, weight: .bold))
@@ -85,11 +92,14 @@ struct DetailsView: View {
             
             
             Spacer()
-        }.background(Color(red: 248 / 255, green: 252 / 250, blue: 252 / 255))
+        }.background(Color(red: 248 / 255, green: 252 / 250, blue: 252 / 255)).navigationBarBackButtonHidden(true)
         
     }
 }
 
 #Preview {
-    DetailsView()
+    let transitStop = TransitStop(name: "Stop Name", distance: "0.5 miles", routes: [Route(name: "", timeOfArrival: "", isLive: true)])
+                                  
+                                  
+   return DetailsView(transitStop: transitStop)
 }

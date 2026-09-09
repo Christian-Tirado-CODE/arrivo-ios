@@ -11,7 +11,6 @@ struct HomeView: View {
    
     var transitStop: TransitStop
     
-    
     init() {
         
         let transitRoutes = [Route(name: "Route 38", timeOfArrival: "2 min", isLive: true), Route(name: "Route 14", timeOfArrival: "8 min", isLive: false)]
@@ -22,15 +21,21 @@ struct HomeView: View {
     
     
     var body: some View {
-        VStack {
+        
+        NavigationStack {
+            VStack {
 
-            SearchBar()
-            
-            FavoritesItem(favoriteItem: transitStop)
-            Spacer()
-        }.background(Color(red: 248 / 255, green: 252 / 250, blue: 252 / 255))
+                SearchBar()
+                
+                FavoritesItem(favoriteItem: transitStop)
+                Spacer()
+            }.background(Color(red: 248 / 255, green: 252 / 250, blue: 252 / 255)).navigationDestination(for: TransitStop.self) { selectedItem in
+                DetailsView(transitStop: selectedItem)
+            }
 
+        }
     }
+      
 }
 
 #Preview {
