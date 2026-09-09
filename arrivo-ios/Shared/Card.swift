@@ -21,6 +21,4 @@ struct Card<Content: View>: View {
 }
 
 
-#Preview {
-    DetailsView()
-}
+
