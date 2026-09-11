@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FavoritesItem: View {
     var favoriteItem: TransitStop
+    var onSelectMoreRoutes: () -> Void // Callback to trigger navigation
     var body: some View {
         VStack {
             VStack {
@@ -32,11 +33,12 @@ struct FavoritesItem: View {
                 HStack {
                     
 
-                    ForEach(favoriteItem.routes){ route in
+                    ForEach(favoriteItem.routes.prefix(2)){ route in
                         VStack(alignment: .leading) {
                             
                             HStack {
                                 Text(route.name).font(.system(size: 12, weight: .bold)).foregroundStyle(Color(red: 100 / 255, green: 116 / 250, blue: 139 / 255))
+                                Spacer()
                                 if(route.isLive){
                                     LiveIndicator()
                                 }
@@ -46,7 +48,7 @@ struct FavoritesItem: View {
                                 
                             }
                             Text(route.timeOfArrival).font(.system(size: 24, weight: .bold)).foregroundStyle(Color(red: 15 / 255, green: 23 / 250, blue: 42 / 255))
-                        }.frame(maxWidth: .infinity, alignment: .leading).padding(12).background(Color(red: 248 / 255, green: 252 / 250, blue: 252 / 255)).cornerRadius(6)
+                        }.frame(maxWidth: .infinity, alignment: .leading).frame(maxHeight: .infinity).padding(12).background(Color(red: 248 / 255, green: 252 / 250, blue: 252 / 255)).cornerRadius(6)
                         
                     }
                     
@@ -56,10 +58,20 @@ struct FavoritesItem: View {
                   
                     
                 }.frame(maxWidth: .infinity)
-                NavigationLink(value: favoriteItem) {
-                    Text("+ 2 more routes >").foregroundStyle(Color(red: 100 / 255, green: 116 / 250, blue: 139 / 255)).frame(maxWidth: .infinity, alignment: .leading)
-                    
+                if(favoriteItem.routes.count > 2) {
+                    HStack{
+                        Button {
+                                                    onSelectMoreRoutes()
+                                                } label: {
+                                                    Text("+ \(favoriteItem.routes.count - 2) more routes >")
+                                                        .foregroundStyle(Color(red: 100 / 255, green: 116 / 255, blue: 139 / 255))
+                                                }
+                                                .buttonStyle(.plain)
+                        Spacer()
+                    }
+                   
                 }
+               
                
                
                 
@@ -68,7 +80,7 @@ struct FavoritesItem: View {
                     .stroke(Color(red: 226 / 255, green: 232 / 250, blue: 240 / 255), lineWidth: 1)
             )
         
-        }.padding(20)
+        }
     }
 }
 

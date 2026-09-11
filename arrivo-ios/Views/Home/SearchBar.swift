@@ -27,16 +27,7 @@ struct SearchBar: View {
             Text("Favorites").font(.system(size: 30, weight: .bold))
             Spacer()
 
-            ZStack {
-                Circle().fill(
-                    Color(red: 248 / 255, green: 252 / 250, blue: 252 / 255)
-                ).frame(width: 50, height: 50)
-
-                Image("search_icon").resizable().scaledToFit().frame(
-                    width: 24,
-                    height: 24
-                )
-            }
+          
 
         }.padding(20).background(Color.white, ignoresSafeAreaEdges: []).overlay(
             Rectangle()

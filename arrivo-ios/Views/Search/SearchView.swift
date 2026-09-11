@@ -34,28 +34,13 @@ struct SearchView: View {
                     )
                
             }
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 0) {
                 Text("Nearby Stops").font(.system(size: 18, weight: .bold)).padding(.bottom, 16)
-                Card {
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text("Broadway & Pike St").font(.system(size: 17, weight: .bold))
-                            
-                            HStack {
-                                Image("map_pin_icon").resizable().scaledToFit().frame(
-                                    width: 20,
-                                    height: 20
-                                ).foregroundStyle(Color(red: 100 / 255, green: 116 / 250, blue: 139 / 255))
-                                Text("150 ft away").foregroundStyle(Color(red: 100 / 255, green: 116 / 250, blue: 139 / 255))
-                            }
-                           
-                        }
-                        
-                        Spacer()
-                    }
-                   
-                    
-                }
+              
+                
+                SearchList()
+                
+               
             }.padding(.top,  16).padding(.horizontal, 20)
             Spacer()
         }.background(Color(red: 248 / 255, green: 252 / 250, blue: 252 / 255))
