@@ -50,7 +50,34 @@ struct HomeView: View {
                 SearchBar()
               
                 VStack {
-                    FavoritesList(transitStops: $transitStops, navigationPath: $navigationPath).padding(.bottom, 40)
+                    if(transitStops.count == 0) {
+                        VStack {
+                            Spacer()
+                            Text("No favorite stops yet").font(.system(size: 20, weight: .bold)).padding(.bottom, 12)
+                            Text("Search for a stop and tap the star to see live arrivals here.").font(.system(size: 14)).foregroundColor(Color(red: 100 / 255, green: 139 / 255, blue: 116 / 255)).padding(.bottom, 32)
+                            Button {
+                                       // Put your button tap action code here
+                                       print("Find stops tapped")
+                                   } label: {
+                                       Text("Find stops")
+                                           .font(.system(size: 18, weight: .bold)) // Bold, readable text
+                                           .foregroundColor(.white)
+                                           .padding(.vertical, 16)
+                                           .padding(.horizontal, 40)
+                                       // Vertical padding inside the button
+                                                      // Stretches to fill available horizontal width
+                                           .background(Color(red: 0.31, green: 0.31, blue: 0.92)) // Matches the vibrant purple/blue hue
+                                           .clipShape(Capsule())                   // Forces the perfectly rounded pill shape
+                                   }
+                                   .padding(.horizontal, 24)
+                            Spacer()
+                        }
+                      
+                        
+                    } else {
+                        FavoritesList(transitStops: $transitStops, navigationPath: $navigationPath).padding(.bottom, 40)
+                    }
+                   
 
                 }
                 Spacer()
