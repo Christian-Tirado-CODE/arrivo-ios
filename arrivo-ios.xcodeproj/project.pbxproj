@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E531167B305965B000A9A19D /* ArrivoData in Frameworks */ = {isa = PBXBuildFile; productRef = E531167A305965B000A9A19D /* ArrivoData */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		E5F43441303A49E4004C2B14 /* arrivo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = arrivo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E531167B305965B000A9A19D /* ArrivoData in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = arrivo;
 			packageProductDependencies = (
+				E531167A305965B000A9A19D /* ArrivoData */,
 			);
 			productName = arrivo;
 			productReference = E5F43441303A49E4004C2B14 /* arrivo.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = E5F43438303A49E4004C2B14;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E5311679305965B000A9A19D /* XCLocalSwiftPackageReference "ArrivoData" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E5F43442303A49E4004C2B14 /* Products */;
 			projectDirPath = "";
@@ -328,6 +337,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		E5311679305965B000A9A19D /* XCLocalSwiftPackageReference "ArrivoData" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ArrivoData;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E531167A305965B000A9A19D /* ArrivoData */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ArrivoData;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E5F43439303A49E4004C2B14 /* Project object */;
 }
