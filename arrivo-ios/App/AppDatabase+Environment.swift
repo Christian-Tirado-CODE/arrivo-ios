@@ -8,6 +8,7 @@
 
 
 import SwiftUI
+import ArrivoData
 
 private struct AppDatabaseKey: EnvironmentKey {
     // Force-try is acceptable: an in-memory database that fails to open means

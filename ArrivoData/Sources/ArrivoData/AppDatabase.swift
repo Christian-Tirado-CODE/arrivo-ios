@@ -28,18 +28,18 @@ extension Logger {
 /// It hands `Sendable` values to view models, which are the things that should
 /// be `@MainActor`. Keeping that line sharp is what stops isolation errors from
 /// appearing one at a time at every callback boundary.
-nonisolated final class AppDatabase: Sendable {
+public nonisolated final class AppDatabase: Sendable {
 
     /// `DatabaseWriter` rather than a concrete type so tests and previews can
     /// substitute an in-memory `DatabaseQueue` for the on-disk `DatabasePool`.
     /// GRDB 7's `DatabaseWriter` inherits `Sendable`, which is what allows this
     /// class to be `Sendable` while holding it.
-    let writer: any DatabaseWriter
+    public let writer: any DatabaseWriter
 
     /// Reads go through the same object; the protocol exposes `read` too.
-    var reader: any DatabaseReader { writer }
+  public var reader: any DatabaseReader { writer }
 
-    init(_ writer: any DatabaseWriter) throws {
+    public init(_ writer: any DatabaseWriter) throws {
         self.writer = writer
         try Self.migrator.migrate(writer)
     }
@@ -54,7 +54,7 @@ extension AppDatabase {
     /// `nonisolated` so this can be called from a background task later (for
     /// example, if the import ever needs to open the database outside app
     /// launch) without a second round of isolation errors.
-    nonisolated static func makeShared() throws -> AppDatabase {
+public nonisolated static func makeShared() throws -> AppDatabase {
         let fileManager = FileManager.default
 
         // Application Support is NOT created for you, and neither is our
@@ -90,7 +90,7 @@ extension AppDatabase {
 
     /// An empty in-memory database for tests and SwiftUI previews.
     /// Migrations run, so the schema matches production exactly.
-    nonisolated static func empty() throws -> AppDatabase {
+  public nonisolated static func empty() throws -> AppDatabase {
         try AppDatabase(DatabaseQueue(configuration: makeConfiguration()))
     }
 }

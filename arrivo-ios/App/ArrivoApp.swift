@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ArrivoData
 
 @main
 struct ArrivoApp: App {
