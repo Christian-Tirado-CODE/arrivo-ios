@@ -68,8 +68,11 @@ struct DetailsView: View {
 }
 
 #Preview {
-    let transitStop = TransitStop(name: "Stop Name", distance: "0.5 miles", routes: [Route(name: "", timeOfArrival: "", isLive: true)])
-                                  
-                                  
-   return DetailsView(transitStop: transitStop)
+    let transitStop = TransitStop(
+        id: "10553231",
+        name: "Magnolia Ave WB and Central St",
+        distance: nil,
+        routes: [])
+
+    DetailsView(transitStop: transitStop)
 }

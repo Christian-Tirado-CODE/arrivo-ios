@@ -16,12 +16,15 @@ struct SearchItem: View {
                 VStack(alignment: .leading) {
                     Text(searchItem.name).font(.system(size: 17, weight: .bold))
                     
-                    HStack {
-                        Image("map_pin_icon").resizable().scaledToFit().frame(
-                            width: 20,
-                            height: 20
-                        ).foregroundStyle(Color(red: 100 / 255, green: 116 / 250, blue: 139 / 255))
-                        Text(searchItem.distance).foregroundStyle(Color(red: 100 / 255, green: 116 / 250, blue: 139 / 255))
+                    if let distance = searchItem.distance {
+                        HStack {
+                            Image("map_pin_icon")
+                                .resizable().scaledToFit()
+                                .frame(width: 20, height: 20)
+                                .foregroundStyle(Color.arrivoSecondaryText)
+                            Text(distance)
+                                .foregroundStyle(Color.arrivoSecondaryText)
+                        }
                     }
                    
                 }

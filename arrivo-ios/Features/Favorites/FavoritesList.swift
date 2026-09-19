@@ -10,22 +10,24 @@ import SwiftUI
 
 
 struct FavoritesList: View {
-   @Binding var transitStops: [TransitStop]
+    let stops: [TransitStop]
     @Binding var navigationPath: NavigationPath
+    let onUnfavorite: (String) -> Void
 
     var body: some View {
         List {
 
-                ForEach(transitStops, id: \.id){transitStop in
-                    FavoritesItem(favoriteItem: transitStop, onSelectMoreRoutes: {
-                        navigationPath.append(transitStop) // Programmatically navigate
+                ForEach(stops, id: \.id){stop in
+                    FavoritesItem(favoriteItem: stop,
+                                  onUnfavorite: { onUnfavorite(stop.id) },
+                                  onSelectMoreRoutes: {
+                        navigationPath.append(stop) // Programmatically navigate
                     }).listRowSeparator(.hidden)
                         .listRowBackground(Color.clear)
                 }.onDelete { indexSet in
-                    withAnimation(.snappy(duration: 0.25)) {
-                        transitStops.remove(atOffsets: indexSet)
-                    }
-                }
+                    for index in indexSet {
+                           onUnfavorite(stops[index].id)
+                       }                }
             
            
         }.listStyle(.plain).background(Color.clear).scrollContentBackground(.hidden).navigationDestination(for: TransitStop.self) { selectedItem in

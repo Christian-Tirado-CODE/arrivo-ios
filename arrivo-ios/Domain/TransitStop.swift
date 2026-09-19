@@ -8,11 +8,13 @@
 import Foundation
 
 class TransitStop: Identifiable, Hashable {
-    var name: String
-    var distance: String
-    var routes: [Route]
+    let id: String          // GTFS stop_id — needed to unfavorite and to navigate
+    let name: String
+    let distance: String?   // nil until CoreLocation lands (M4)
+    let routes: [Route]
     
-    init(name: String, distance: String, routes: [Route]){
+    init(id: String, name: String, distance: String?, routes: [Route]){
+        self.id = id
         self.name = name
         self.distance = distance
         self.routes = routes

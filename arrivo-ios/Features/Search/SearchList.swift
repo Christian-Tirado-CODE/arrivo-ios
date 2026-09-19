@@ -18,10 +18,10 @@ struct SearchList: View {
         let transitRoutes3 = [Route(name: "Route 38", timeOfArrival: "2 min", isLive: true), Route(name: "Route 14", timeOfArrival: "8 min", isLive: false)]
         let transitRoutes4 = [Route(name: "Route 38", timeOfArrival: "2 min", isLive: true), Route(name: "Route 14", timeOfArrival: "8 min", isLive: false)]
         
-        let transitStop1 = TransitStop(name: "Market St & 3rd Ave", distance: "2 min walk • 150 ft away", routes: transitRoutes1)
-        let transitStop2 = TransitStop(name: "Market St & 3rd Ave", distance: "2 min walk • 150 ft away", routes: transitRoutes2)
-        let transitStop3 = TransitStop(name: "Market St & 3rd Ave", distance: "2 min walk • 150 ft away", routes: transitRoutes3)
-        let transitStop4 = TransitStop(name: "Market St & 3rd Ave", distance: "2 min walk • 150 ft away", routes: transitRoutes4)
+        let transitStop1 = TransitStop(id: "10553231", name: "Market St & 3rd Ave", distance: "2 min walk • 150 ft away", routes: transitRoutes1)
+        let transitStop2 = TransitStop(id: "10546192", name: "Market St & 3rd Ave", distance: "2 min walk • 150 ft away", routes: transitRoutes2)
+        let transitStop3 = TransitStop(id: "10555002", name: "Market St & 3rd Ave", distance: "2 min walk • 150 ft away", routes: transitRoutes3)
+        let transitStop4 = TransitStop(id: "10556217", name: "Market St & 3rd Ave", distance: "2 min walk • 150 ft away", routes: transitRoutes4)
         
         self.transitStops = [transitStop1, transitStop2, transitStop3, transitStop4]
         
